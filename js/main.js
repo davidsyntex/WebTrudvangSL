@@ -1,36 +1,42 @@
 $(document).ready(function () {
 
+    $("#name-results").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Tryck på en knapp för att slumpa ett namn.</li><ul>");
+
     var generatedNames = [];
+    var namesToGenerate = 5;
 
     $("#mittlandare").click(function () {
-        var gender = $("#gender input:radio:checked").val();
-        fillGeneratedNames("mittlandare", gender, 10);
-        $("#name-results").html(generateHtmlOutput());
-        generatedNames = [];
+        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
     });
 
     $("#stormlandare").click(function () {
-        var gender = $("#gender input:radio:checked").val();
-        fillGeneratedNames("mittlandare", gender, 10);
-        $("#name-results").html(generateHtmlOutput());
-        generatedNames = [];
+        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
     });
 
-    $("#btn3").click(function () {
-        $("#test3").val("Dolly Duck");
+    $("#virann").click(function () {
+        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
     });
+    $("#troll").click(function () {
+        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
+    });
+
+    function displayRandomName(people, gender, namesToGenerate) {
+        fillGeneratedNames(people, gender, namesToGenerate);
+        $("#name-results").html(generateHtmlOutput());
+        generatedNames = [];
+    }
 
     function fillGeneratedNames(people, gender, numberOfNames) {
         for (; numberOfNames > 0; numberOfNames--) {
-            generatedNames.push(getRandomName("mittlandare", gender));
+            generatedNames.push(getRandomName(people, gender));
         }
     }
 
     function generateHtmlOutput() {
-        var htmlOutputString = "<ul>";
+        var htmlOutputString = "<br><ul class=\"list-group\">";
 
         generatedNames.forEach(function (element) {
-            htmlOutputString = htmlOutputString.concat("<li>" + element + "</li>")
+            htmlOutputString = htmlOutputString.concat("<li class=\"list-group-item capitalize\">" + element + "</li>")
         }, this);
 
         htmlOutputString = htmlOutputString.concat("<ul>");
@@ -43,10 +49,6 @@ $(document).ready(function () {
     }
 
     function getRandomName(people, gender) {
-
-        console.log(people);
-        console.log(gender);
-
         var prefix = getRandomPrefix(people);
         var suffix = getRandomSuffix(people, gender);
 
@@ -57,8 +59,17 @@ $(document).ready(function () {
         var prefix = [];
         if (people === "mittlandare") {
             prefix = ["Bren", "Bran", "Edel", "Edil", "Eid", "Eo", "Gul", "Gal", "Guld", "Gul", "Hedel", "Her", "Log", "Mau", "Maug", "Mor", "Mord"];
-            console.log(prefix[0]);
         }
+        if (people === "stormlandare") {
+            prefix = ["as", "bod", "bryn", "hall", "hraf", "ing", "jor", "tor", "vig", "vret"];
+        }
+        if (people === "virann") {
+            prefix = ["Ber", "Beor", "Bur", "Buor", "Bewr", "Bewor", "Brun", "Bruni", "Bran", "Brani", "Bron", "Broni", "Donni", "Dunni", "Ed", "Edel", "Ev", "Evel", "Fri", "Fride", "Fra", "Frade", "Fru", "Frude", "Gal", "Gals", "Gol", "Gols", "Hun", "Huni", "Hen", "Heni", "Klod", "Klodi", "Klud", "Kludi", "Mer", "Mero", "Mor", "Moro", "Ro", "Rode", "Ru", "Rude", "Sor", "Sork", "Sar", "Sark", "Sul", "Suli", "Sol", "Soli", "Sal", "Sali", "Tryn", "Tryni", "Tron", "Troni"];
+        }
+        if (people === "troll") {
+            prefix = ["a", "nak", "gnak", "vårt", "vårta", "årt", "dy", "dry", "dryg", "e", "fis", "fisk", "ful", "full", "furm", "gri", "grik", "grinn", "gris", "hog", "ke", "klo", "knorr", "lill", "knott"];
+        }
+
         return prefix[randomNumber(prefix.length) - 1];
     }
 
@@ -72,6 +83,26 @@ $(document).ready(function () {
                 suffix = ["non", "annon", "de", "elde", "eid", "heid", "trude", "itrude", "frid", "lynn", "na", "nhja", "rynn", "wa", "wen"];
             }
         }
+        if (people === "stormlandare") {
+            if (gender === "male") {
+                suffix = ["biorn", "geir", "grim", "galt", "jald", "orm", "ulf", "ur", "vald", "varr"];
+            }
+            else if (gender === "female") {
+                suffix = ["a", "dis", "dott", "gerd", "hild", "umbla", "unn", "veig", "vida", "vigg"];
+            }
+        }
+        if (people === "virann") {
+            if (gender === "male") {
+                suffix = ["bad", "gar", "gist", "kar", "kind", "kull", "pis", "red", "rik", "till", "thill", "walan", "vard", "wig", "vik"];
+            }
+            else if (gender === "female") {
+                suffix = ["th", "dith", "fing", "gond", "hed", "hedd", "kild", "len", "mynt", "mynta", "nell", "sta", "stai", "strid", "thne", "tilde", "winda"];
+            }
+        }
+        if (people === "troll") {
+            suffix = ["lork", "lorsk", "lus", "mo", "must", "ogg", "päls", "ryt", "sno", "snor", "snus", "stink", "sto", "stor", "tande", "tide", "tov", "urg", "vis", "yge", "ygel", "yt"];
+        }
+
         return suffix[randomNumber(suffix.length) - 1];
     }
 
