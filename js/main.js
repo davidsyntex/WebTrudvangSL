@@ -1,34 +1,105 @@
 $(document).ready(function () {
 
-    $("#name-results").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Tryck på en knapp för att slumpa ett namn.</li><ul>");
+    ResetNamePeopleResultsSwedish();
+    ResetNameThingsResultsSwedish();
 
+    var selectedLanguage = "Svenska";
     var generatedNames = [];
     var namesToGenerate = 5;
 
-    $("#mittlandare").click(function () {
-        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
+    $("#languageSwitcher").click(function () {
+        console.log("Pressed");
+        if ($(this).html() === "English") {
+            selectedLanguage = "English";
+
+            $("#peopleHeading").html("Character");
+            $("#peopleDescription").html("Gives you a random generated name for a character.");
+            $("#thingsHeading").html("Villages, Inns & Plants");
+            $("#thingsDescription").html("Gives you a random generated name for a village, inn or plant.");
+
+            ResetNamePeopleResultsEnglish();
+            ResetNameThingsResultsEnglish();
+
+            $("#genderFemale").get(0).nextSibling.textContent = "Woman";
+
+            $("#mittlandare").html("Mittlander");
+            $("#stormlandare").html("Stormlander");
+            $("#virann").html("Viranns");
+            $("#dvarg").html("Dwarves");
+            $("#alf").html("Elves");
+            $("#by").html("Village");
+            $("#vardshus").html("Inn");
+            $("#vaxt").html("Plant");
+
+            $("#languageSwitcher").html("Svenska");
+            return;
+        }
+
+        if ($(this).html() === "Svenska") {
+            selectedLanguage = "Svenska";
+
+            $("#peopleHeading").html("Karaktär");
+            $("#peopleDescription").html("Ger dig ett slumpat namn för en karaktär.");
+            $("#thingsHeading").html("Byar, Värdshus & Växter");
+            $("#thingsDescription").html("Ger dig ett slumpat namn för en by, ett värdshus eller en växt.");
+
+            ResetNamePeopleResultsSwedish();
+            ResetNameThingsResultsSwedish();
+
+            $("#mittlandare").html("Mittländare");
+            $("#stormlandare").html("Stormländare");
+            $("#virann").html("Virann");
+            $("#dvarg").html("Dvärg");
+            $("#alf").html("Alf");
+            $("#by").html("By");
+            $("#vardshus").html("Värdshus");
+            $("#vaxt").html("Växt");
+
+            $("#genderFemale").get(0).nextSibling.textContent = "Kvinna";
+            $("#languageSwitcher").html("English");
+            return;
+        }
+
     });
 
-    $("#stormlandare").click(function () {
-        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
+    $("#gender input:radio").change(function () {
+        if (selectedLanguage === "Svenska") {
+            ResetNamePeopleResultsSwedish();
+        }
+        if (selectedLanguage === "English") {
+            ResetNamePeopleResultsEnglish();
+        }
     });
 
-    $("#virann").click(function () {
-        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
-    });
-    $("#troll").click(function () {
-        displayRandomName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
+    $("#namePeople button").click(function () {
+        displayRandomPeopleName(this.id, $("#gender input:radio:checked").val(), namesToGenerate);
     });
 
-    function displayRandomName(people, gender, namesToGenerate) {
-        fillGeneratedNames(people, gender, namesToGenerate);
-        $("#name-results").html(generateHtmlOutput());
+    $("#nameThings button").click(function () {
+        displayRandomThingsName(this.id, namesToGenerate);
+    });
+
+    function displayRandomPeopleName(people, gender, namesToGenerate) {
+        fillGeneratedNamesPeople(people, gender, namesToGenerate);
+        $("#namePeopleResults").html(generateHtmlOutput());
         generatedNames = [];
     }
 
-    function fillGeneratedNames(people, gender, numberOfNames) {
+    function displayRandomThingsName(value, namesToGenerate) {
+        fillGeneratedNamesThings(value, namesToGenerate);
+        $("#nameThingsResults").html(generateHtmlOutput());
+        generatedNames = [];
+    }
+
+    function fillGeneratedNamesPeople(people, gender, numberOfNames) {
         for (; numberOfNames > 0; numberOfNames--) {
-            generatedNames.push(getRandomName(people, gender));
+            generatedNames.push(getRandomPeopleName(people, gender));
+        }
+    }
+
+    function fillGeneratedNamesThings(value, numberOfNames) {
+        for (; numberOfNames > 0; numberOfNames--) {
+            generatedNames.push(getRandomThingsName(value));
         }
     }
 
@@ -48,32 +119,61 @@ $(document).ready(function () {
         return Math.floor((Math.random() * max) + 1);
     }
 
-    function getRandomName(people, gender) {
+    function getRandomPeopleName(people, gender) {
         var prefix = getRandomPrefix(people);
-        var suffix = getRandomSuffix(people, gender);
+        var suffix = getRandomPeopleSuffix(people, gender);
 
         return prefix.concat(suffix);
     }
 
-    function getRandomPrefix(people) {
+    function getRandomThingsName(value) {
+        var prefix = getRandomPrefix(value);
+        var suffix = getRandomThingsSuffix(value);
+        return prefix + suffix;
+    }
+
+    function getRandomPrefix(value) {
         var prefix = [];
-        if (people === "mittlandare") {
+        if (value === "mittlandare") {
             prefix = ["Bren", "Bran", "Edel", "Edil", "Eid", "Eo", "Gul", "Gal", "Guld", "Gul", "Hedel", "Her", "Log", "Mau", "Maug", "Mor", "Mord"];
         }
-        if (people === "stormlandare") {
+        
+        if (value === "stormlandare") {
             prefix = ["as", "bod", "bryn", "hall", "hraf", "ing", "jor", "tor", "vig", "vret"];
         }
-        if (people === "virann") {
+        
+        if (value === "virann") {
             prefix = ["Ber", "Beor", "Bur", "Buor", "Bewr", "Bewor", "Brun", "Bruni", "Bran", "Brani", "Bron", "Broni", "Donni", "Dunni", "Ed", "Edel", "Ev", "Evel", "Fri", "Fride", "Fra", "Frade", "Fru", "Frude", "Gal", "Gals", "Gol", "Gols", "Hun", "Huni", "Hen", "Heni", "Klod", "Klodi", "Klud", "Kludi", "Mer", "Mero", "Mor", "Moro", "Ro", "Rode", "Ru", "Rude", "Sor", "Sork", "Sar", "Sark", "Sul", "Suli", "Sol", "Soli", "Sal", "Sali", "Tryn", "Tryni", "Tron", "Troni"];
         }
-        if (people === "troll") {
+        
+        if (value === "dvarg") {
+            prefix = ["Bor", "Brok", "Dvor", "Fifun", "Glo", "Gly", "Jo", "Jor", "Niful", "Ru", "Ruk", "Tjeb", "Tor", "Zvor"];
+        }
+        
+        if (value === "alf") {
+            prefix = ["Harp", "Jep", "Jeppi", "Kyll", "Lep", "Lepo", "Norma", "Normo", "Pojh", "Pojha", "Sirp", "Sirpa", "Syll", "Vaj", "Vajne", "Val", "Vali"];
+        }
+        
+        if (value === "troll") {
             prefix = ["a", "nak", "gnak", "vårt", "vårta", "årt", "dy", "dry", "dryg", "e", "fis", "fisk", "ful", "full", "furm", "gri", "grik", "grinn", "gris", "hog", "ke", "klo", "knorr", "lill", "knott"];
+        }
+
+        if (value === "by") {
+            prefix = ["Al", "Alfe", "Aske", "Atla", "Aud", "Audur", "Bjalfe", "Bjorn", "Björk", "Blid", "Blot", "Bock", "Borke", "Brage", "Brase", "Bronja", "Bål", "Egil", "Ejlög", "Ek", "Ese", "Fager", "Falk", "Frost", "Gad", "Galt", "Gaute", "Gerd", "Gisle", "Gno", "Gorm", "Grim", "Grise", "Gruve", "Grå", "Gyda", "Hamra", "Helga", "Hella", "Hrim", "Häll", "Jon", "Jorna", "Jot", "Järn", "Jökull", "Jöt", "Kal", "Kjöle", "Koppar", "Korp", "Kråk", "Kviste", "Laupe", "Lille", "Lo", "Lov", "Marsk", "Mjöd", "Mull", "Möln", "Nid", "Njal", "Odd", "Orm", "Ost", "Oster", "Rafner", "Rauk", "Run", "Ränne", "Silver", "Skuru", "Smed", "Sol", "Sot", "Starke", "Sten", "Stig", "Stor", "Storm", "Sund", "Tall", "Tindra", "Troll", "Tur", "Ulf", "Ulm", "Unn", "Vide", "Vild", "Vinter", "Vis", "Vit", "Vret", "Väster", "Åker", "Ås", "Älg", "Öst"];
+        }
+
+        if (value === "vardshus") {
+            prefix = ["troll", "röt", "orm", "hugg", "skald", "svin", "rövar", "mjöd", "hjälte", "korp", "stormes", "bronje", "tråg", "skogs", "öl", "mjöd", "tvilling", "härjar", "garm", "svultna", "lytte", "trasiga", "stegrande", "frusna", "bäcka", "gave", "saga", "skägg", "moss", "lav", "fjäll", "barr", "drak", "möra", "skummande", "galna", "uppretade", "slaktade", "lagade", "blå", "röda", "gröna", "gula", "vita", "svarta", "bruna", "försupne "];
+        }
+
+        if (value === "vaxt") {
+            prefix = ["Afton", "Alva", "Bergs", "Bjark", "Björn", "Blad", "Blod", "Blods", "Brons", "Dagg", "Dis", "Drak", "Dvärg", "Dy", "Eld", "Fackel", "Fager", "Finger", "Garna", "Gave", "Grim", "Grå", "Gråe", "Gul", "Gull", "Har", "Hingst", "Himla", "Hird", "Hjort", "Humle", "Hväle", "Häst", "Häx", "Igel", "Jarla", "Jord", "Jorn", "Jotun", "Järn", "Jätte", "Kalder", "Knytt", "Kol", "Koppar", "Korp", "Kungs", "Kärr", "Kärr", "Lom", "Lund", "Mal", "Manna", "Marsk", "Mist", "Mork", "Mörk", "Myr", "Mån", "Natt", "Nät", "Orm", "Ox", "Pil", "Puder", "Rafner", "Ros", "Röd", "Silver", "Sjö", "Skarp", "Skav", "Skogs", "Skvätt", "Snö", "Sol", "Sten", "Stjärn", "Stjärne", "Storme", "Svart", "Svin", "Tagg", "Talg", "Tistel", "Tok", "Troll", "Tråd", "Törn", "Vall", "Varg", "Vatten", "Vild", "Vinter", "Vit", "Vitner", "Vår", "Vätte", "Älg", "Älv", "Älva", "Älve", "Äng", "Änga", "Ängs"];
         }
 
         return prefix[randomNumber(prefix.length) - 1];
     }
 
-    function getRandomSuffix(people, gender) {
+    function getRandomPeopleSuffix(people, gender) {
         var suffix = [];
         if (people === "mittlandare") {
             if (gender === "male") {
@@ -83,6 +183,7 @@ $(document).ready(function () {
                 suffix = ["non", "annon", "de", "elde", "eid", "heid", "trude", "itrude", "frid", "lynn", "na", "nhja", "rynn", "wa", "wen"];
             }
         }
+
         if (people === "stormlandare") {
             if (gender === "male") {
                 suffix = ["biorn", "geir", "grim", "galt", "jald", "orm", "ulf", "ur", "vald", "varr"];
@@ -91,6 +192,7 @@ $(document).ready(function () {
                 suffix = ["a", "dis", "dott", "gerd", "hild", "umbla", "unn", "veig", "vida", "vigg"];
             }
         }
+
         if (people === "virann") {
             if (gender === "male") {
                 suffix = ["bad", "gar", "gist", "kar", "kind", "kull", "pis", "red", "rik", "till", "thill", "walan", "vard", "wig", "vik"];
@@ -99,6 +201,20 @@ $(document).ready(function () {
                 suffix = ["th", "dith", "fing", "gond", "hed", "hedd", "kild", "len", "mynt", "mynta", "nell", "sta", "stai", "strid", "thne", "tilde", "winda"];
             }
         }
+
+        if (people === "dvarg") {
+            suffix = ["olgd", "dolga", "ka", "kka", "ust", "rust", "drank", "gel", "linkk", "logi", "rovv", "van", "var", "zink"];
+        }
+
+        if (people === "alf") {
+            if (gender === "male") {
+                suffix = ["hang", "ehang", "iaho", "piaho", "akka", "ingas", "jias", "lainen", "mojna", "pihi", "taja", "ua"];
+            }
+            else if (gender === "female") {
+                suffix = ["ala", "pala", "atta", "hiska", "ika", "iulu", "iullu", "kosva", "lajna", "likki", "olvi", "sinka"];
+            }
+        }
+
         if (people === "troll") {
             suffix = ["lork", "lorsk", "lus", "mo", "must", "ogg", "päls", "ryt", "sno", "snor", "snus", "stink", "sto", "stor", "tande", "tide", "tov", "urg", "vis", "yge", "ygel", "yt"];
         }
@@ -106,6 +222,32 @@ $(document).ready(function () {
         return suffix[randomNumber(suffix.length) - 1];
     }
 
+    function getRandomThingsSuffix(value) {
+        var suffix = [];
+        if (value === "by") {
+            suffix = ["al", "anger", "backa ", "berg ", "blot", "bod ", "boda ", "borg", "botten", "brant", "bro ", "bruk ", "brunn ", "by ", "bäck ", "dal", "dis ", "ed", "fjord ", "fjäll ", "fors", "fors ", "frost ", "fält", "gang", "gap ", "gard ", "gull", "gård ", "haga ", "hall", "hammar ", "hamn ", "harg ", "hed", "hem", "holm ", "holt ", "hult", "häll", "hög ", "inge ", "klint", "klippan ", "kulla ", "kvarn", "källa ", "köping", "lev ", "lid ", "ljung ", "lund ", "lycke ", "löse ", "löv ", "mark ", "mosse", "mönja ", "nejd", "näs ", "om", "pass", "ro", "rum ", "rup ", "ryd ", "rödja ", "sala ", "skog ", "slaga ", "sorg ", "sta", "stein", "stena ", "stig", "stock ", "sund", "tegn ", "ting", "tjärn ", "tofta ", "topp", "torp ", "träsk ", "tun", "tune ", "um ", "vad", "vall", "vi ", "vik", "vind ", "virja ", "vy ", "å", "åker ", "åkra ", "ås ", "älv", "äng"];
+        }
+        if (value === "vardshus") {
+            suffix = ["hallen", "grytet", "hålan", "stian", "krogen", "syltan", "svinet", "björnen", "stugan", "huset", "hålet", "vaken", "viken", "tjärn", "torp", "fjäll", "huvudet", "tornet", "korsning", "korsningen", "riket", "platsen", "punkten", "galten", "vandraren", "ponnyn", "bocken", "kaninen", "stopet", "hålet", "vaken", "viken", "tjärn", "torp", "huvudet", "hus", "katten", "ormen", "skräddaren"];
+        }
+        if (value === "vaxt") {
+            suffix = ["anis", "apel", "ax", "bark", "beta", "bjärt", "blad", "blom", "blomster", "bräken", "buske", "bär", "böna", "cikoria", "dill", "ek", "en", "fibbla", "fläder", "frö", "glädje", "gran", "gäck", "hallon", "hassel", "hatt", "havre", "hirs", "hjortron", "klubba", "klöver", "knöl", "kocka", "koriander", "korn", "kott", "kotte", "krusbär", "krydda", "kummin", "kål", "körvel", "lav", "lilja", "lin", "lingon", "lök", "löv", "meliss", "morot", "mossa", "murkla", "mynta", "målla", "måra", "nate", "nässla", "peppar", "päron", "rabarber", "regn", "ris", "rot", "råg", "räfsa", "rättika", "sallad", "sippa", "själke", "skatta", "skimra", "skivling", "skräppa", "sköna", "slån", "smultron", "snår", "sopp", "sporre", "starr", "sticka", "stjärna", "storm", "svamp", "timjan", "torn", "tryffel", "tunga", "tuva", "törn", "törne", "ull", "vallmo", "vass", "vete", "vide", "viva", "väv", "ärt", "ärtskocka", "ört"];
+        }
+        return suffix[randomNumber(suffix.length) - 1];
+    }
+
+    function ResetNamePeopleResultsSwedish() {
+        $("#namePeopleResults").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Tryck på en knapp för att slumpa ett namn.</li><ul>");
+    }
+    function ResetNamePeopleResultsEnglish() {
+        $("#namePeopleResults").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Press a button to generate a name.</li><ul>");
+    }
+
+    function ResetNameThingsResultsSwedish() {
+        $("#nameThingsResults").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Tryck på en knapp för att slumpa ett namn.</li><ul>");
+    }
+    function ResetNameThingsResultsEnglish() {
+        $("#nameThingsResults").html("<br><ul class=\"list-group\"><li class=\"list-group-item\">Press a button to generate a name.</li><ul>");
+    }
+
 });
-
-

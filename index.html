@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
-            padding-top: 50px;
+            /*padding-top: 50px;*/
             padding-bottom: 20px;
         }
     </style>
@@ -30,11 +30,12 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -42,16 +43,13 @@
                 </button>
                 <a class="navbar-brand" href="#">Trudvang SL</a>
             </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">English</a></li>
-                </ul>
+                <button id="languageSwitcher" style="margin-right: 20px" type="button" class="btn btn-default navbar-btn navbar-right">English</button>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-
-            </div>
-            <!--/.navbar-collapse -->
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action 
@@ -67,8 +65,8 @@
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-9" role="main">
-                <h2>Karaktär</h2>
-                <p>Ger dig ett slumpat namn för en karaktär.</p>
+                <h2 id="peopleHeading">Karaktär</h2>
+                <p id="peopleDescription">Ger dig ett slumpat namn för en karaktär.</p>
                 <div id="gender" class="btn-group" data-toggle="buttons">
                     <label class="btn btn-primary active">
                         <input type="radio" name="options" id="genderFemale" value="female" autocomplete="off" checked> Kvinna
@@ -79,20 +77,26 @@
                 </div>
                 <br>
                 <br>
-                <div class="btn-group" role="group" aria-label="...">
+                <div id="namePeople" class="btn-group" role="group" aria-label="...">
                     <button id="mittlandare" type="button" class="btn btn-default">Mittländare</button>
                     <button id="stormlandare" type="button" class="btn btn-default">Stormländare</button>
                     <button id="virann" type="button" class="btn btn-default">Virann</button>
+                    <button id="dvarg" type="button" class="btn btn-default">Dvärg</button>
+                    <button id="alf" type="button" class="btn btn-default">Alf</button>
                     <button id="troll" type="button" class="btn btn-default">Troll</button>
                 </div>
                 <div>
-                    <p id="name-results"></p>
+                    <p id="namePeopleResults"></p>
                 </div>
-                <h2>Värdshus & Plantor</h2>
-                <p>Ger dig ett slumpat namn för ett värdshus eller en växt.</p>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default">Värdshus</button>
-                    <button type="button" class="btn btn-default">Växt</button>
+                <h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
+                <p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
+                <div id="nameThings" class="btn-group" role="group" aria-label="...">
+                    <button id="by" type="button" class="btn btn-default">By</button>
+                    <button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
+                    <button id="vaxt" type="button" class="btn btn-default">Växt</button>
+                </div>
+                <div>
+                    <p id="nameThingsResults"></p>
                 </div>
             </div>
         </div>
