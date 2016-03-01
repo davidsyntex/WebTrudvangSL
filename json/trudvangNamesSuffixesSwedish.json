@@ -1,0 +1,178 @@
+{
+  "people": {
+    "mittlandare": {
+      "male": [
+        "ard",
+        "bard",
+        "jar",
+        "gjar",
+        "ed",
+        "hed",
+        "finn",
+        "fraidh",
+        "han",
+        "marr",
+        "red",
+        "rik",
+        "win",
+        "winn"
+      ],
+      "female": [
+        "non",
+        "annon",
+        "de",
+        "elde",
+        "eid",
+        "heid",
+        "trude",
+        "itrude",
+        "frid",
+        "lynn",
+        "na",
+        "nhja",
+        "rynn",
+        "wa",
+        "wen"
+      ]
+    },
+    "stormlandare": {
+      "male": [
+        "biorn",
+        "geir",
+        "grim",
+        "galt",
+        "jald",
+        "orm",
+        "ulf",
+        "ur",
+        "vald",
+        "varr"
+      ],
+      "female": [
+        "a",
+        "dis",
+        "dott",
+        "gerd",
+        "hild",
+        "umbla",
+        "unn",
+        "veig",
+        "vida",
+        "vigg"
+      ]
+    },
+    "virann": {
+      "male": [
+        "bad",
+        "gar",
+        "gist",
+        "kar",
+        "kind",
+        "kull",
+        "pis",
+        "red",
+        "rik",
+        "till",
+        "thill",
+        "walan",
+        "vard",
+        "wig",
+        "vik"
+      ],
+      "female": [
+        "th",
+        "dith",
+        "fing",
+        "gond",
+        "hed",
+        "hedd",
+        "kild",
+        "len",
+        "mynt",
+        "mynta",
+        "nell",
+        "sta",
+        "stai",
+        "strid",
+        "thne",
+        "tilde",
+        "winda"
+      ]
+    },
+    "alf": {
+      "male": [
+        "hang",
+        "ehang",
+        "iaho",
+        "piaho",
+        "akka",
+        "ingas",
+        "jias",
+        "lainen",
+        "mojna",
+        "pihi",
+        "taja",
+        "ua"
+      ],
+      "female": [
+        "ala",
+        "pala",
+        "atta",
+        "hiska",
+        "ika",
+        "iulu",
+        "iullu",
+        "kosva",
+        "lajna",
+        "likki",
+        "olvi",
+        "sinka"
+      ]
+    },
+    "dvarg": {
+      "suffix": [
+        "olgd",
+        "dolga",
+        "ka",
+        "kka",
+        "ust",
+        "rust",
+        "drank",
+        "gel",
+        "linkk",
+        "logi",
+        "rovv",
+        "van",
+        "var",
+        "zink"
+      ]
+    },
+    "troll": {
+      "suffix": [
+        "lork",
+        "lorsk",
+        "lus",
+        "mo",
+        "must",
+        "ogg",
+        "päls",
+        "ryt",
+        "sno",
+        "snor",
+        "snus",
+        "stink",
+        "sto",
+        "stor",
+        "tande",
+        "tide",
+        "tov",
+        "urg",
+        "vis",
+        "yge",
+        "ygel",
+        "yt"
+      ]
+    }
+  },
+  "things": "names"
+}
