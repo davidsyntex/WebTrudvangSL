@@ -172,7 +172,7 @@ $(document).ready(function () {
         function getRandomThingsName(thing) {
 
             var prefixRandomNumber = getRandomNumber(thingList[thing]["prefix"].length) - 1;
-            var suffixRandomNumber = getRandomNumber(thingList[thing]["prefix"].length) - 1;
+            var suffixRandomNumber = getRandomNumber(thingList[thing]["suffix"].length) - 1;
 
             return thingList[thing]["prefix"][prefixRandomNumber] + thingList[thing]["suffix"][suffixRandomNumber];
         }
