@@ -1,103 +1,25 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <h1>Trudvang</h1>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Trudvang SL</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+            <div class="ziox-section"><h2 id="peopleHeading">Karaktärsnamn</h2>
 
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <style>
-        body {
-            /*padding-top: 50px;*/
-            padding-bottom: 20px;
-        }
-    </style>
-    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="../../css/main.css">
-
-    <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../../index.html">ziox RPG-Helper</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <!--<li class="active"><a href="#"></a></li>
-					<li><a href="#">Link</a></li>-->
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Game<span class="caret"></span><span class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Trudvang</a></li>
-                            <li><a href="#">Trudvang Chronicles</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">13th Age</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">General</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About</a></li>
-                </ul>
-                <button id="languageSwitcher" style="margin-right: 20px" type="button"
-                        class="btn btn-default navbar-btn navbar-right">English
-                </button>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action 
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>-->
-
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-9" role="main">
-                <h1>Trudvang</h1>
-                <h2>Karaktärsnamn</h2>
                 <p id="peopleDescription">Ger dig ett slumpat namn för en karaktär.</p>
-                <div id="gender" class="btn-group" data-toggle="buttons">
+
+                <div id="nameGender" class="btn-group" data-toggle="buttons">
                     <label class="btn btn-primary active">
-                        <input type="radio" name="options" id="genderFemale" value="female" autocomplete="off" checked> Kvinna
+                        <input type="radio" name="options" value="female" autocomplete="off" checked>
+                        Kvinna
                     </label>
                     <label class="btn btn-primary">
-                        <input type="radio" name="options" id="genderMale" value="male" autocomplete="off"> Man
+                        <input type="radio" name="options" value="male" autocomplete="off"> Man
                     </label>
                 </div>
                 <br>
                 <br>
+
                 <div id="namePeople" class="btn-group" role="group" aria-label="...">
                     <button id="mittlandare" type="button" class="btn btn-default">Mittländare</button>
                     <button id="stormlandare" type="button" class="btn btn-default">Stormländare</button>
@@ -106,48 +28,80 @@
                     <button id="alf" type="button" class="btn btn-default">Alf</button>
                     <button id="troll" type="button" class="btn btn-default">Troll</button>
                 </div>
-                <div>
-                    <p id="namePeopleResults"></p>
-                </div>
-                <h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
-                <p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
-                <div id="nameThings" class="btn-group" role="group" aria-label="...">
-                    <button id="by" type="button" class="btn btn-default">By</button>
-                    <button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
-                    <button id="vaxt" type="button" class="btn btn-default">Växt</button>
-                </div>
-                <div>
-                    <p id="nameThingsResults"></p>
-                </div>
+                <div id="namePeopleResults"></div>
             </div>
+
+            <div class="ziox-section"><h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
+
+            <p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
+
+            <div id="nameThings" class="btn-group" role="group" aria-label="...">
+                <button id="by" type="button" class="btn btn-default">By</button>
+                <button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
+                <button id="vaxt" type="button" class="btn btn-default">Växt</button>
+            </div>
+
+            <div id="nameThingsResults"></div></div>
+
+
+            <div class="ziox-section"><h2 id="kroppspoangHeading">Kroppspoäng</h2>
+
+            <div id="kroppspoangDescription">Räknar ut kroppspoäng för en varelse baserat på totala kroppspoäng.</div>
+            <br>
+
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="kroppspoangTotala">Totala kroppspoäng</label>
+                    <input type="number" class="form-control" id="kroppspoangTotala" min="0" value="0">
+                </div>
+                <button id="kroppspoangRakna" type="button" class="btn btn-default" role="button">Räkna ut</button>
+            </form>
+
+            <div id="kroppspoangResults"></div></div>
+
+            <div class="ziox-section"><h2 id="fardigheterHeading">Färdigheter</h2>
+
+            <div id="fardigheterDescription">Räknar ut kroppspoäng för en varelse baserat på totala kroppspoäng.</div>
+            <br>
+
+            <form>
+                <div class="form-group">
+                    <label for="fardigheterGammaltFV">Gammalt FV</label>
+                    <input type="number" class="form-control" id="fardigheterGammaltFV" min="0" max="100" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="fardigheterNyttFV">Nytt FV</label>
+                    <input type="number" class="form-control" id="fardigheterNyttFV" min="0" max="100" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="fardigheterMod">Modifikation</label>
+                    <input type="number" class="form-control" id="fardigheterMod" min="-100" max="100" value="0">
+                </div>
+                <button id="fardigheterRakna" type="button" class="btn btn-default" role="button">Räkna ut</button>
+            </form>
+
+            <div id="fardigheterResults"></div></div>
+
         </div>
-
-        <hr>
-
-        <footer>
-            <p>Site: David Malmström 2016 (MIT)</p>
-            <p>Names: &copy; <a href="http://www.riotminds.se">RiotMinds AB</>, <a href="http://forum.riotminds.se"> RiotMinds forum</a></p>
-        </footer>
+        <div class="col-md-3" role="complementary">
+            <nav class="col-xs-3 bs-docs-sidebar">
+                <ul id="sidebar" class="nav nav-stacked fixed">
+                    <li>
+                        <a href="#home">Topp</a>
+                    </li><li>
+                        <a href="#peopleHeading">Karaktärsnamn</a>
+                    </li>
+                    <li>
+                        <a href="#thingsHeading">Byar, Värdshus & Växter</a>
+                    </li>
+                    <li>
+                        <a href="#kroppspoangHeading">Kroppspoäng</a>
+                    </li>
+                    <li>
+                        <a href="#fardigheterHeading">Färdigheter</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <!-- /container-->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
-    <script>
-        window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
-
-    <script src="../../js/vendor/bootstrap.min.js"></script>
-    <script src="../../js/trudvang.js"></script>
-    <script src="../../js/main.js"></script>
- <!--  <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-74320262-1', 'auto');
-  ga('send', 'pageview');
-
-    </script>
-</body>-->
-
-</html>
+</div>
