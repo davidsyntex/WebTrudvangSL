@@ -1,14 +1,7 @@
 $(document).ready(function () {
-    $("#navbar").load("http://davidsyntex.github.io/WebTrudvangSL/game/general/navbar.html", function () {
-        $("#home").click(function () {
-            $("#site").load("game/general/home.html");
+    $("#navbar").load("http://syntex.noip.me/zrh/game/general/navbar.html", function () {
+        $.getScript('http://syntex.noip.me/zrh/js/language.js', function(){
+            LoadLanguages('http://syntex.noip.me/zrh/json/language.json');
         });
-
-        $("#gameTrudvang").click(function () {
-            $("#site").load("game/trudvang/site.html", function () {
-                Trudvang();
-            });
-        })
     });
-    $("#site").load("game/general/home.html");
 });

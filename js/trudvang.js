@@ -3,9 +3,11 @@ $(document).ready(function () {
         return Math.floor((Math.random() * max) + 1);
     }
 
-    $("#navbar").load("http://davidsyntex.github.io/WebTrudvangSL/game/general/navbar.html", function () {
+    $("#navbar").load("http://syntex.noip.me/zrh/game/general/navbar.html", function () {
+        $.getScript('http://syntex.noip.me/zrh/js/language.js', function(){
+            //LoadLanguages('http://syntex.noip.me/zrh/json/language.json');
+        });
     });
-
 
     $('body').scrollspy({
         target: '.bs-docs-sidebar',
@@ -16,14 +18,14 @@ $(document).ready(function () {
     var peoplePrefixList;
     var thingList;
 
-    $.getJSON('json/trudvangPeopleSuffixSwedish.json', function (json) {
+    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangPeopleSuffixSwedish.json', function (json) {
         peopleSuffixList = json;
     });
 
-    $.getJSON('json/trudvangPeoplePrefixSwedish.json', function (json) {
+    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangPeoplePrefixSwedish.json', function (json) {
         peoplePrefixList = json;
     });
-    $.getJSON('json/trudvangThingSwedish.json', function (json) {
+    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangThingSwedish.json', function (json) {
         thingList = json;
     });
 
@@ -36,6 +38,7 @@ $(document).ready(function () {
 
     $("#namePeople").find("button").click(function () {
         fillGeneratedNamesPeople(this.id, $("#nameGender").find("input:radio:checked").val(), namesToGenerate);
+        console.log($("#nameGender").find("input:radio:checked").val());
         displayRandomPeopleName();
         clearGeneratedNames();
     });
@@ -172,6 +175,9 @@ $(document).ready(function () {
 
     function getRandomPeopleSuffix(chosenPeople, chosenGender) {
         var suffix = [];
+
+        //console.log(chosenPeople);
+        //console.log(chosenGender);
 
         if (chosenPeople === "dvarg" || chosenPeople === "troll") {
             suffix = peopleSuffixList[chosenPeople]["suffix"];

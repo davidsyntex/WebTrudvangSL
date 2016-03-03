@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a id="home" class="navbar-brand" href="http://davidsyntex.github.io/WebTrudvangSL/" role="button">ziox RPG-Helper</a>
+        <a id="home" class="navbar-brand" href="http://syntex.noip.me/zrh/" role="button">ziox RPG-Helper</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -17,10 +17,10 @@
             <!--<li class="active"><a href="#"></a></li>
             <li><a href="#">Link</a></li>-->
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a id="navbarGames" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">Spel<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a id="gameTrudvang" href="http://davidsyntex.github.io/WebTrudvangSL/game/trudvang" role="button">Trudvang</a>
+                    <li><a id="gameTrudvang" href="http://syntex.noip.me/zrh/game/trudvang" role="button">Trudvang</a>
                     </li>
                     <li class="disabled"><a href="#" role="button">Trudvang Chronicles</a></li>
                     <li role="separator" class="divider"></li>
@@ -32,20 +32,30 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a id="navbarGeneral" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">Generella<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li class="disabled"><a href="#" role="button">Äventyrsuppslag</a></li>
-                    <li class="disabled"><a href="#" role="button">Kännetecken</a></li>
+                    <li class="disabled"><a id="navbarGeneralHooks" href="#" role="button">Äventyrsuppslag</a></li>
+                    <li class="disabled"><a id="navbarGeneralTraits"href="#" role="button">Kännetecken</a></li>
                     <li role="separator" class="divider"></li>
-                    <li class="disabled"><a href="#" role="button">Intriger</a></li>
+                    <li class="disabled"><a id="navbarGeneralIntrigue"href="#" role="button">Intriger</a></li>
                 </ul>
             </li>
             <li class="disabled"><a href="#">About</a></li>
         </ul>
-        <!--<button id="languageSwitcher" style="margin-right: 20px" type="button"
-                class="btn btn-default navbar-btn navbar-right">English
+        <!--<button id="languageSwitcher" style="margin-right: 0px" type="button"
+                class="btn btn-default navbar-btn navbar-right">Switch to English
         </button>-->
+        <div id="languageSwitcher" class="navbar-btn navbar-right btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="radio" name="options" value="english" autocomplete="off">
+                English
+            </label>
+            <label class="btn btn-primary active">
+                <input type="radio" name="options" value="swedish" autocomplete="off" checked>Swedish
+            </label>
+        </div>
+        </div>
     </div>
     <!-- /.navbar-collapse -->
 </div>
