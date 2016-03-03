@@ -3,9 +3,9 @@ $(document).ready(function () {
         return Math.floor((Math.random() * max) + 1);
     }
 
-    $("#navbar").load("http://syntex.noip.me/zrh/game/general/navbar.html", function () {
-        $.getScript('http://syntex.noip.me/zrh/js/language.js', function(){
-            //LoadLanguages('http://syntex.noip.me/zrh/json/language.json');
+    $("#navbar").load("http://davidsyntex.github.io/WebTrudvangSL/game/general/navbar.html", function () {
+        $.getScript('http://davidsyntex.github.io/WebTrudvangSL/js/language.js', function(){
+            //LoadLanguages('http://davidsyntex.github.io/WebTrudvangSL/json/language.json');
         });
     });
 
@@ -18,14 +18,14 @@ $(document).ready(function () {
     var peoplePrefixList;
     var thingList;
 
-    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangPeopleSuffixSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangPeopleSuffixSwedish.json', function (json) {
         peopleSuffixList = json;
     });
 
-    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangPeoplePrefixSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangPeoplePrefixSwedish.json', function (json) {
         peoplePrefixList = json;
     });
-    $.getJSON('http://syntex.noip.me/zrh/game/trudvang/json/trudvangThingSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangThingSwedish.json', function (json) {
         thingList = json;
     });
 

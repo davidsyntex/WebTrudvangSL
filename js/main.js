@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $("#navbar").load("http://syntex.noip.me/zrh/game/general/navbar.html", function () {
-        $.getScript('http://syntex.noip.me/zrh/js/language.js', function(){
-            LoadLanguages('http://syntex.noip.me/zrh/json/language.json');
+    $("#navbar").load("http://davidsyntex.github.io/WebTrudvangSL/game/general/navbar.html", function () {
+        $.getScript('http://davidsyntex.github.io/WebTrudvangSL/js/language.js', function(){
+            LoadLanguages('http://davidsyntex.github.io/WebTrudvangSL/json/language.json');
         });
     });
 });

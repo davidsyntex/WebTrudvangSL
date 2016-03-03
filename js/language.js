@@ -2,7 +2,7 @@ var languageStrings = null;
 var languageNavbarStrings = null;
 var currentLanguage = "swedish";
 
-$.getJSON('http://syntex.noip.me/zrh/game/general/json/language.json', function (json) {
+$.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/general/json/language.json', function (json) {
     languageNavbarStrings = json;
     languageSwitcher();
 });
@@ -40,7 +40,7 @@ function changeNavbarStrings() {
 }
 
 function LoadLanguages(urlToLanguageJSON) {
-    $.getJSON('http://syntex.noip.me/zrh/json/language.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/json/language.json', function (json) {
         languageStrings = json;
     });
 }
