@@ -46,7 +46,6 @@ $(document).ready(function () {
         }
         // a must be equal to b
         return 0;
-
     }
 
     function SortNumbersDescending(a, b) {
@@ -59,22 +58,26 @@ $(document).ready(function () {
         }
         // a must be equal to b
         return 0;
-
     }
-
 
     function displayParticipants() {
         var tbody = $("#initTable").find("tbody");
         tbody.html("");
         Participants.forEach(function (item, index, array) {
-
-            console.log(item, index);
             tbody.append('<tr id="Participant' + item.id + '"><td><div class="form-group form-inline"><input type="number" class="form-control" value="' + item.initiative + '"></div></td><td><div class="form-group form-inline"><input type="text" class="form-control" value="' + item.name + '"></div></td><td><button type="button" class="btn btn-danger" role="button" aria-label="Ta bort"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td></tr>');
 
             var id = $("#Participant" + item.id);
 
             id.find("input").change(function () {
-                item.initiative = parseInt(id.find("input").val());
+                if(isNaN(parseInt(id.find("input").val())))
+                {
+                    item.initiative = 0;
+                }
+                else
+                {
+                    item.initiative = parseInt(id.find("input").val());
+                }
+
                 Participants.sort(SortNumbersAscending);
             });
 
@@ -92,7 +95,13 @@ $(document).ready(function () {
 
     $("#initAddParticipantButton").click(function () {
         var name = $("#initAddParticipantName").val();
-        var initiative = parseInt($("#initAddParticipantInitiative").val());
+        var initiativeInput = $("#initAddParticipantInitiative");
+        var initiative = 0;
+        if(!isNaN(parseInt(initiativeInput.val())))
+        {
+            initiative = parseInt(initiativeInput.val());
+        }
+
         Participants.push(new Participant(name, initiative));
         displayParticipants();
     });
