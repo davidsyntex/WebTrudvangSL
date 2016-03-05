@@ -10,152 +10,166 @@
 <!--<![endif]-->
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>ziox RPG-Helper</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ziox RPG-Helper</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/bootstrap.min.css">
-	<style>
-		body
-		{
-			/*padding-top: 50px;*/
-			padding-bottom: 20px;
-		}
-	</style>
-	<link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/main.css">
+    <link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/bootstrap.min.css">
+    <style>
+        body {
+            /*padding-top: 50px;*/
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://davidsyntex.github.io/WebTrudvangSL/css/main.css">
 
-	<script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-	your browser</a> to improve your experience.</p>
+    your browser</a> to improve your experience.</p>
 <![endif]-->
-<nav id="navbar" class="navbar navbar-inverse navbar-static-top" role="navigation"><div class="container-fluid"></nav>
-<div id="site"><div class="container">
-	<!-- Example row of columns -->
-	<div class="row">
-		<div class="col-md-9" role="main">
-			<h1>Trudvang</h1>
+<nav id="navbar" class="navbar navbar-inverse navbar-static-top" role="navigation"></nav>
+<div id="site">
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <h1>Trudvang</h1>
 
-			<div class="ziox-section"><h2 id="peopleHeading">Karaktärsnamn</h2>
+                <div class="ziox-section"><h2 id="peopleHeading">Karaktärsnamn</h2>
 
-				<p id="peopleDescription">Ger dig ett slumpat namn för en karaktär.</p>
+                    <p id="peopleDescription">Ger dig ett slumpat namn för en karaktär.</p>
 
-				<div id="nameGender" class="btn-group" data-toggle="buttons">
-					<label class="btn btn-primary active">
-						<input type="radio" name="genderOptions" value="female" autocomplete="off" checked>
-						Kvinna
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="genderOptions" value="male" autocomplete="off"> Man
-					</label>
-				</div>
-				<br>
-				<br>
+                    <div id="nameGender" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="genderOptions" value="female" autocomplete="off" checked>
+                            Kvinna
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="genderOptions" value="male" autocomplete="off"> Man
+                        </label>
+                    </div>
+                    <br>
+                    <br>
 
-				<div id="namePeople" class="btn-group" role="group" aria-label="...">
-					<button id="mittlandare" type="button" class="btn btn-default">Mittländare</button>
-					<button id="stormlandare" type="button" class="btn btn-default">Stormländare</button>
-					<button id="virann" type="button" class="btn btn-default">Virann</button>
-					<button id="dvarg" type="button" class="btn btn-default">Dvärg</button>
-					<button id="alf" type="button" class="btn btn-default">Alf</button>
-					<button id="troll" type="button" class="btn btn-default">Troll</button>
-				</div>
-				<div id="namePeopleResults"></div>
-			</div>
+                    <div id="namePeople" class="btn-group" role="group" aria-label="...">
+                        <button id="mittlandare" type="button" class="btn btn-default">Mittländare</button>
+                        <button id="stormlandare" type="button" class="btn btn-default">Stormländare</button>
+                        <button id="virann" type="button" class="btn btn-default">Virann</button>
+                        <button id="dvarg" type="button" class="btn btn-default">Dvärg</button>
+                        <button id="alf" type="button" class="btn btn-default">Alf</button>
+                        <button id="troll" type="button" class="btn btn-default">Troll</button>
+                    </div>
+                    <div id="namePeopleResults"></div>
+                </div>
 
-			<div class="ziox-section"><h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
+                <div class="ziox-section"><h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
 
-				<p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
+                    <p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
 
-				<div id="nameThings" class="btn-group" role="group" aria-label="...">
-					<button id="by" type="button" class="btn btn-default">By</button>
-					<button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
-					<button id="vaxt" type="button" class="btn btn-default">Växt</button>
-				</div>
+                    <div id="nameThings" class="btn-group" role="group" aria-label="...">
+                        <button id="by" type="button" class="btn btn-default">By</button>
+                        <button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
+                        <button id="vaxt" type="button" class="btn btn-default">Växt</button>
+                    </div>
 
-				<div id="nameThingsResults"></div></div>
+                    <div id="nameThingsResults"></div>
+                </div>
 
 
-			<div class="ziox-section"><h2 id="kroppspoangHeading">Kroppspoäng</h2>
+                <div class="ziox-section"><h2 id="kroppspoangHeading">Kroppspoäng</h2>
 
-				<div id="kroppspoangDescription">Räknar ut kroppspoäng för en varelse baserat på totala kroppspoäng.</div>
-				<br>
+                    <div id="kroppspoangDescription">Räknar ut kroppspoäng för en varelse baserat på totala
+                        kroppspoäng.
+                    </div>
+                    <br>
 
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="kroppspoangTotala">Totala kroppspoäng</label>
-						<input type="number" class="form-control" id="kroppspoangTotala" min="0" value="0">
-					</div>
-					<button id="kroppspoangRakna" type="button" class="btn btn-default" role="button">Räkna ut</button>
-				</form>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="kroppspoangTotala">Totala kroppspoäng</label>
+                            <input type="number" class="form-control" id="kroppspoangTotala" min="0" value="0">
+                        </div>
+                        <button id="kroppspoangRakna" type="button" class="btn btn-default" role="button">Räkna ut
+                        </button>
+                    </form>
 
-				<div id="kroppspoangResults"></div></div>
+                    <div id="kroppspoangResults"></div>
+                </div>
 
-			<div class="ziox-section"><h2 id="fardigheterHeading">Färdigheter</h2>
+                <div class="ziox-section"><h2 id="fardigheterHeading">Färdigheter</h2>
 
-				<div id="fardigheterDescription">Räknar ut kroppspoäng för en varelse baserat på totala kroppspoäng.</div>
-				<br>
+                    <div id="fardigheterDescription">Räknar ut kroppspoäng för en varelse baserat på totala
+                        kroppspoäng.
+                    </div>
+                    <br>
 
-				<form>
-					<div class="form-group">
-						<label for="fardigheterGammaltFV">Gammalt FV</label>
-						<input type="number" class="form-control" id="fardigheterGammaltFV" min="0" max="100" value="0">
-					</div>
-					<div class="form-group">
-						<label for="fardigheterNyttFV">Nytt FV</label>
-						<input type="number" class="form-control" id="fardigheterNyttFV" min="0" max="100" value="0">
-					</div>
-					<div class="form-group">
-						<label for="fardigheterMod">Modifikation</label>
-						<input type="number" class="form-control" id="fardigheterMod" min="-100" max="100" value="0">
-					</div>
-					<button id="fardigheterRakna" type="button" class="btn btn-default" role="button">Räkna ut</button>
-				</form>
+                    <form>
+                        <div class="form-group">
+                            <label for="fardigheterGammaltFV">Gammalt FV</label>
+                            <input type="number" class="form-control" id="fardigheterGammaltFV" min="0" max="100"
+                                   value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fardigheterNyttFV">Nytt FV</label>
+                            <input type="number" class="form-control" id="fardigheterNyttFV" min="0" max="100"
+                                   value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fardigheterMod">Modifikation</label>
+                            <input type="number" class="form-control" id="fardigheterMod" min="-100" max="100"
+                                   value="0">
+                        </div>
+                        <button id="fardigheterRakna" type="button" class="btn btn-default" role="button">Räkna ut
+                        </button>
+                    </form>
 
-				<div id="fardigheterResults"></div></div>
+                    <div id="fardigheterResults"></div>
+                </div>
 
-		</div>
-		<div class="col-md-3" role="complementary">
-			<nav class="col-xs-3 bs-docs-sidebar">
-				<ul id="sidebar" class="nav nav-stacked fixed">
-					<li>
-						<a href="#home">Topp</a>
-					</li><li>
-					<a href="#peopleHeading">Karaktärsnamn</a>
-				</li>
-					<li>
-						<a href="#thingsHeading">Byar, Värdshus & Växter</a>
-					</li>
-					<li>
-						<a href="#kroppspoangHeading">Kroppspoäng</a>
-					</li>
-					<li>
-						<a href="#fardigheterHeading">Färdigheter</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div></div>
-<div class="container">
-	<hr>
-	<footer>
-		<p>Site: David &lt;ziox&gt; Malmström 2016 (MIT)</p>
-		<p>Names: &copy; RiotMinds AB, &copy; RiotMinds forum</p>
-	</footer>
-</div>
+            </div>
+            <div class="col-md-3" role="complementary">
+                <nav class="col-xs-3 bs-docs-sidebar">
+                    <ul id="sidebar" class="nav nav-stacked fixed">
+                        <li>
+                            <a href="#navbar">Topp</a>
+                        </li>
+                        <li>
+                            <a href="#peopleHeading">Karaktärsnamn</a>
+                        </li>
+                        <li>
+                            <a href="#thingsHeading">Byar, Värdshus & Växter</a>
+                        </li>
+                        <li>
+                            <a href="#kroppspoangHeading">Kroppspoäng</a>
+                        </li>
+                        <li>
+                            <a href="#fardigheterHeading">Färdigheter</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
+        <div class="container">
+            <hr>
+            <footer>
+                <p>Site: David &lt;ziox&gt; Malmström 2016 (MIT)</p>
+
+                <p>Names: &copy; RiotMinds AB, &copy; RiotMinds forum</p>
+            </footer>
+        </div>
+    </div>
 </div>
 <!-- /container-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-	window.jQuery || document.write('<script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/jquery-1.11.2.min.js"><\/script>')
+    window.jQuery || document.write('<script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/jquery-1.11.2.min.js"><\/script>')
 </script>
 
 <script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/bootstrap.min.js"></script>

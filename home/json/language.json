@@ -3,18 +3,20 @@
     "navbarGames": "Spel<span class=\"caret\"></span>",
     "navbarGeneral": "Generella<span class=\"caret\"></span>",
     "navbarGeneralHooks": "Äventyrsuppslag",
-    "navbarGeneralTraits": "Kännetecken",
+    "navbarGeneralNPC": "Spelledarperson",
     "navbarGeneralIntrigue": "Intriger",
     "navbarGeneralInitiative": "Initiativ",
-    "buttonInitiative": "Initiativ &raquo;"
+    "buttonInitiative": "Initiativ &raquo;",
+    "buttonNPC": "Spelledarperson &raquo;"
   },
   "english": {
     "navbarGames": "Games<span class=\"caret\"></span>",
     "navbarGeneral": "General<span class=\"caret\"></span>",
     "navbarGeneralHooks": "Hooks",
-    "navbarGeneralTraits": "Traits",
+    "navbarGeneralNPC": "NPC",
     "navbarGeneralIntrigue": "Intrigue",
     "navbarGeneralInitiative": "Initiative",
-    "buttonInitiative": "Initiative &raquo;"
+    "buttonInitiative": "Initiative &raquo;",
+    "buttonNPC": "NPC &raquo;"
   }
 }

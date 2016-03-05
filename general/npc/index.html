@@ -40,75 +40,57 @@
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-9" role="main">
-                <h1>Trudvang Chronicles</h1>
+                <h1>Speledarperson</h1>
 
-                <div class="ziox-section"><h2 id="peopleHeading">Character Name</h2>
+                <div class="ziox-section"><h2 id="npcHeading">Kännetecken</h2>
 
-                    <p id="peopleDescription">Ger dig ett slumpat namn för en karaktär.</p>
+                    <p id="traitNpcDescription">Ger dig ett slumpat kännetecken för en spelledarperson.</p>
 
-                    <div id="nameGender" class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-primary active">
-                            <input type="radio" name="genderOptions" value="female" autocomplete="off" checked>
-                            Kvinna
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="genderOptions" value="male" autocomplete="off"> Man
-                        </label>
+                    <div id="traitNpc" class="btn-group" role="group" aria-label="...">
+                        <button id="background" type="button" class="btn btn-default">Bakgrund</button>
+                        <button id="mental" type="button" class="btn btn-default">Kännetecken</button>
+                        <button id="physical" type="button" class="btn btn-default">Fysiska kännetecken</button>
+                        <button id="goal" type="button" class="btn btn-default">Mål</button>
+                        <button id="profession" type="button" class="btn btn-default">Yrke</button>
+                        <button id="secret" type="button" class="btn btn-default">Hemlighet</button>
+                        <button id="award" type="button" class="btn btn-default">Belöning</button>
                     </div>
-                    <br>
-                    <br>
-
-                    <div id="namePeople" class="btn-group" role="group" aria-label="...">
-                        <button id="mittlandare" type="button" class="btn btn-default">Mittländare</button>
-                        <button id="stormlandare" type="button" class="btn btn-default">Stormländare</button>
-                        <button id="virann" type="button" class="btn btn-default">Virann</button>
-                        <button id="dvarg" type="button" class="btn btn-default">Dvärg</button>
-                        <button id="alf" type="button" class="btn btn-default">Alf</button>
-                        <button id="troll" type="button" class="btn btn-default">Troll</button>
-                    </div>
-                    <div id="namePeopleResults"></div>
+                    <div id="traitNpcResults"></div>
                 </div>
 
-                <div class="ziox-section"><h2 id="thingsHeading">Byar, Värdshus & Växter</h2>
-
-                    <p id="thingsDescription">Ger dig ett slumpat namn för en by, ett värdshus eller en växt.</p>
-
-                    <div id="nameThings" class="btn-group" role="group" aria-label="...">
-                        <button id="by" type="button" class="btn btn-default">By</button>
-                        <button id="vardshus" type="button" class="btn btn-default">Värdshus</button>
-                        <button id="vaxt" type="button" class="btn btn-default">Växt</button>
-                    </div>
-
-                    <div id="nameThingsResults"></div>
-                </div>
             </div>
-            <div class="col-md-3" role="complementary">
+            <!--<div class="col-md-3" role="complementary">
                 <nav class="col-xs-3 bs-docs-sidebar">
                     <ul id="sidebar" class="nav nav-stacked fixed">
                         <li>
                             <a href="#navbar">Topp</a>
                         </li>
                         <li>
-                            <a href="#peopleHeading">Karaktärsnamn</a>
+                            <a href="#npcHeading">Karaktärsnamn</a>
                         </li>
                         <li>
                             <a href="#thingsHeading">Byar, Värdshus & Växter</a>
                         </li>
+                        <li>
+                            <a href="#kroppspoangHeading">Kroppspoäng</a>
+                        </li>
+                        <li>
+                            <a href="#fardigheterHeading">Färdigheter</a>
+                        </li>
                     </ul>
                 </nav>
-            </div>
+            </div>-->
+        </div>
 
+        <div class="container">
+            <hr>
+            <footer>
+                <p>Site: David &lt;ziox&gt; Malmström 2016 (MIT)</p>
+
+                <p>Traits: &copy; <a href="http://www.d20pfsrd.com/gamemastering/tools/random-charts/all-random-charts">D20 PF SRD</a></p>
+            </footer>
         </div>
     </div>
-    <div class="container">
-        <hr>
-        <footer>
-            <p>Site: David &lt;ziox&gt; Malmström 2016 (MIT)</p>
-
-            <p>Names: &copy; RiotMinds AB, &copy; RiotMinds forum</p>
-        </footer>
-    </div>
-
 </div>
 <!-- /container-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -117,7 +99,7 @@
 </script>
 
 <script src="http://davidsyntex.github.io/WebTrudvangSL/js/vendor/bootstrap.min.js"></script>
-<script src="http://davidsyntex.github.io/WebTrudvangSL/js/tc.js"></script>
+<script src="http://davidsyntex.github.io/WebTrudvangSL/js/npc.js"></script>
 <script src="http://davidsyntex.github.io/WebTrudvangSL/js/language.js"></script>
 
 <!--<script>
