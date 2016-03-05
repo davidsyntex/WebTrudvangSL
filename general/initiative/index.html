@@ -67,10 +67,17 @@
 
                     <br>
 
-                    <div class="ziox-section"><h2 id="initTableHeading">Initiativtabell</h2>
+                    <div class="ziox-section"><h2 id="initTableHeading" class="collapse">Initiativ</h2>
 
+                        <div>
+                            <ul id="initInformation" class="nav nav-pills collapse">
+                                <li class="navbar-text" role="presentation" >Runda: <span id="initRoundCounter"></span></li>
+                                <!--<li class="navbar-text" role="presentation">Escalation die: +3</li>
+                                <li class="navbar-text" role="presentation">Deltagare kvar i rundan: 2</li>-->
+                            </ul>
+                        </div>
                         <form>
-                            <table id="initTable" class="table table-striped">
+                            <table id="initTable" class="table table-striped collapse">
                                 <thead>
                                 <tr>
                                     <th>Initiativ</th>
@@ -82,30 +89,29 @@
                                 </tbody>
                             </table>
                             <div class="btn-group" role="group" aria-label="...">
-                                <button id="initButtonSortAscending" type="button" class="btn btn-default">Sortera <span
-                                        class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></button>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button id="initButtonSortDescending" type="button" class="btn btn-default">
+                                <button id="initButtonSortAscending" type="button" class="btn btn-default collapse width">Sortera <span
+                                        class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span></button>
+
+                                <button id="initButtonSortDescending" type="button" class="btn btn-default collapse width">
                                     Sortera <span
-                                        class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+                                        class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span></button>
+
+                                <button id="initButtonStartNewRound" type="button" class="btn btn-default collapse width">
+                                    Start ny runda <span
+                                        class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+
+                                <button id="initButtonNextParticipant" type="button" class="btn btn-default collapse width">
+                                    Nästa deltagare <span
+                                        class="glyphicon glyphicon-forward" aria-hidden="true"></span></button>
                             </div>
                         </form>
                     </div>
-                    <hr>
-
-                </div>
-                <div class="container">
-                    <hr>
-                    <footer>
-                        <p>Site: David &lt;ziox&gt; Malmström 2016 (MIT)</p>
-                    </footer>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<footer id="siteFooter" class="bs-docs-footer" role="contentinfo"></footer>
 <!-- /container-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>

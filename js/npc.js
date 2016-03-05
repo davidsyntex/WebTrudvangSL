@@ -8,6 +8,7 @@ $(document).ready(function () {
             //LoadLanguages('http://davidsyntex.github.io/WebTrudvangSL/json/language.json');
         });
     });
+    $("#siteFooter").load("http://davidsyntex.github.io/WebTrudvangSL/home/footer.html", function () {});
 
     $('body').scrollspy({
         target: '.bs-docs-sidebar',

@@ -9,6 +9,68 @@
     margin-bottom: 60px;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 160px;
+}
+
+.ziox-initiative-form-group {
+    margin-bottom: 0 !important;
+}
+
+.collapsing.width {
+    -webkit-transition-property: width, visibility;
+    transition-property: width, visibility;
+    width: 0;
+    height: auto;
+}
+
+.bs-docs-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 160px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+}
+
+.bs-docs-footer a {
+    color: #fff;
+}
+
+.bs-docs-footer-links {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.bs-docs-footer-links li {
+    display: inline-block;
+}
+
+.bs-docs-footer-links li + li {
+    margin-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .bs-docs-footer {
+        text-align: left;
+    }
+
+    .bs-docs-footer p {
+        margin-bottom: 0;
+    }
+}
+
 /* sidebar */
 .bs-docs-sidebar {
     padding-left: 20px;

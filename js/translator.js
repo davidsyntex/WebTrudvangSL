@@ -1,6 +1,3 @@
-/**
- * Created by Syntex on 2016-03-01.
- */
 $("#languageSwitcher").click(function ()
 {
 	console.log("Pressed");
@@ -28,7 +25,6 @@ $("#languageSwitcher").click(function ()
 		$("#vaxt").html("Plant");
 
 		$("#languageSwitcher").html("Svenska");
-		return;
 	}
 
 	if ($(this).html() === "Svenska")
@@ -54,12 +50,11 @@ $("#languageSwitcher").click(function ()
 
 		$("#genderFemale").get(0).nextSibling.textContent = "Kvinna";
 		$("#languageSwitcher").html("English");
-		return;
 	}
 
 });
 
-$("#gender input:radio").change(function ()
+$("#gender").find("input:radio").change(function ()
 {
 	if (selectedLanguage === "Svenska")
 	{
