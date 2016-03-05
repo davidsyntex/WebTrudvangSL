@@ -1,0 +1,18 @@
+{
+  "swedish": {
+    "navbarGames": "Spel<span class=\"caret\"></span>",
+    "navbarGeneral": "Generella<span class=\"caret\"></span>",
+    "navbarGeneralHooks": "Äventyrsuppslag",
+    "navbarGeneralTraits": "Kännetecken",
+    "navbarGeneralIntrigue": "Intriger",
+    "navbarGeneralInitiative": "Initiativ"
+  },
+  "english": {
+    "navbarGames": "Games<span class=\"caret\"></span>",
+    "navbarGeneral": "General<span class=\"caret\"></span>",
+    "navbarGeneralHooks": "Hooks",
+    "navbarGeneralTraits": "Traits",
+    "navbarGeneralIntrigue": "Intrigue",
+    "navbarGeneralInitiative": "Initiativ"
+  }
+}

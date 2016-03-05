@@ -35,22 +35,22 @@ $("#languageSwitcher").click(function ()
 	{
 		selectedLanguage = "Svenska";
 
-		$("#peopleHeading").html("Karaktär");
-		$("#peopleDescription").html("Ger dig ett slumpat namn för en karaktär.");
-		$("#thingsHeading").html("Byar, Värdshus & Växter");
-		$("#thingsDescription").html("Ger dig ett slumpat namn för en by, ett värdshus eller en växt.");
+		$("#peopleHeading").html("Karaktï¿½r");
+		$("#peopleDescription").html("Ger dig ett slumpat namn fï¿½r en karaktï¿½r.");
+		$("#thingsHeading").html("Byar, Vï¿½rdshus & Vï¿½xter");
+		$("#thingsDescription").html("Ger dig ett slumpat namn fï¿½r en by, ett vï¿½rdshus eller en vï¿½xt.");
 
 		ResetNamePeopleResultsSwedish();
 		ResetNameThingsResultsSwedish();
 
-		$("#mittlandare").html("Mittländare");
-		$("#stormlandare").html("Stormländare");
+		$("#mittlandare").html("Mittlï¿½ndare");
+		$("#stormlandare").html("Stormlï¿½ndare");
 		$("#virann").html("Virann");
-		$("#dvarg").html("Dvärg");
+		$("#dvarg").html("Dvï¿½rg");
 		$("#alf").html("Alf");
 		$("#by").html("By");
-		$("#vardshus").html("Värdshus");
-		$("#vaxt").html("Växt");
+		$("#vardshus").html("Vï¿½rdshus");
+		$("#vaxt").html("Vï¿½xt");
 
 		$("#genderFemale").get(0).nextSibling.textContent = "Kvinna";
 		$("#languageSwitcher").html("English");
@@ -100,24 +100,9 @@ if (selectedLanguage === "English")
 
 	if (value === "troll")
 	{
-		prefix = ["a", "nak", "gnak", "vårt", "vårta", "årt", "dy", "dry", "dryg", "e", "fis", "fisk", "ful", "full", "furm", "gri", "grik", "grinn", "gris", "hog", "ke", "klo", "knorr", "lill", "knott"];
+		prefix = ["a", "nak", "gnak", "vï¿½rt", "vï¿½rta", "ï¿½rt", "dy", "dry", "dryg", "e", "fis", "fisk", "ful", "full", "furm", "gri", "grik", "grinn", "gris", "hog", "ke", "klo", "knorr", "lill", "knott"];
 	}
 
-	if (value === "by")
-	{
-		prefix = ["Alder", "Elf", "Ash", "Atla", "Aud", "Audur", "Bjalfe", "Bjorn", "Birch", "Placid", "Blut", "Buck", "Borke", "Brage", "Brase", "Bronja", "Bale", "Egil", "Ejlög", "Oak", "Ese", "Fair", "Falcon", "Frost", "Gad", "Boar", "Gaute", "Gerd", "Gisle", "Toil", "Gorm", "Grim", "Pig", "Mine", "Grey", "Gyda", "Hammer", "Sanctify", "Hall", "Hrim", "Hall", "Jon", "Jorna", "Jot", "Iron", "Jökull", "Jöt", "Bleak", "kjole", "Copper", "Raven", "Raven", "Twig", "Laupe", "Small", "Lynx", "Laud", "Marsk", "Mead", "Earth", "Cloud", "Nid", "Njal", "Odd", "snake", "east", "Oster", "Rafner", "Rauk", "Runic", "Ränne", "Silver", "Scour", "Smith", "Sun", "Soot", "Stron", "Stone", "Path", "Great", "Storm", "strait", "Pine", "Twinkle", "Troll", "Luck", "Ulf", "Ulm", "Unn", "Willow", "Wild", "Winter", "wise", "Vhite", "Vret", "West", "field", "ridge", "Älg", "Öst"];
-	}
-
-	if (value === "vardshus")
-	{
-		prefix = ["troll", "rot", "snake", "hugg", "skald", "pig", "robber", "mead", "hero", "raven", "storme's", "bronje", "trough", "forest", "ale", "twin", "ravage", "garm", "starving", "listening", "broken", "prancing", "frozen", "brook", "gave", "saga", "beard", "moss", "lichen", "mountain", "fir needle", "dragon", "tender", "frothy", "crazy", "enraged", "slaughtered", "lagade", "cooked", "red", "green", "yellow", "white", "black", "brown", "drunken "];
-		return "The " + (prefix[randomNumber(prefix.length) - 1]);
-	}
-
-	if (value === "vaxt")
-	{
-		prefix = ["Evening", "Fairy", "mountainous", "Bjark", "bear", "leaf", "Blood", "Bloody", "Bronze", "Dew", "Dis", "Drak", "Dvärg", "Dy", "Eld", "Fackel", "Fager", "Finger", "Garna", "Gave", "Grim", "Grå", "Gråe", "Gul", "Gull", "Har", "Hingst", "Himla", "Hird", "Hjort", "Humle", "Hväle", "Häst", "Häx", "Igel", "Jarla", "Jord", "Jorn", "Jotun", "Järn", "Jätte", "Kalder", "Knytt", "Kol", "Koppar", "Korp", "Kungs", "Kärr", "Kärr", "Lom", "Lund", "Mal", "Manna", "Marsk", "Mist", "Mork", "Mörk", "Myr", "Mån", "Natt", "Nät", "Orm", "Ox", "Pil", "Puder", "Rafner", "Ros", "Röd", "Silver", "Sjö", "Skarp", "Skav", "Skogs", "Skvätt", "Snö", "Sol", "Sten", "Stjärn", "Stjärne", "Storme", "Svart", "Svin", "Tagg", "Talg", "Tistel", "Tok", "Troll", "Tråd", "Törn", "Vall", "Varg", "Vatten", "Vild", "Vinter", "Vit", "Vitner", "Vår", "Vätte", "Älg", "Älv", "Älva", "Älve", "Äng", "Änga", "Ängs"];
-	}
 
 	return (prefix[randomNumber(prefix.length) - 1]);
 }

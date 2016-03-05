@@ -2,7 +2,7 @@ var languageStrings = null;
 var languageNavbarStrings = null;
 var currentLanguage = "swedish";
 
-$.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/general/json/language.json', function (json) {
+$.getJSON('http://davidsyntex.github.io/WebTrudvangSL/home/json/language.json', function (json) {
     languageNavbarStrings = json;
     languageSwitcher();
 });

@@ -4,8 +4,8 @@ $(document).ready(function () {
     }
 
     $("#navbar").load("http://davidsyntex.github.io/WebTrudvangSL/home/navbar.html", function () {
-        $.getScript('http://davidsyntex.github.io/WebTrudvangSL/js/language.js', function(){
-            //LoadLanguages('http://davidsyntex.github.io/WebTrudvangSL/json/language.json');
+        $.getScript('http://davidsyntex.github.io/WebTrudvangSL/js/language.js', function () {
+            //LoadLanguages('http://davidsyntex.github.io/WebTrudvangSL/game/tc/json/language.json');
         });
     });
 
@@ -18,20 +18,19 @@ $(document).ready(function () {
     var peoplePrefixList;
     var thingList;
 
-    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangPeopleSuffixSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/tc/json/trudvangPeopleSuffixEnglish.json', function (json) {
         peopleSuffixList = json;
     });
 
-    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangPeoplePrefixSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/tc/json/trudvangPeoplePrefixEnglish.json', function (json) {
         peoplePrefixList = json;
     });
-    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/trudvang/json/trudvangThingSwedish.json', function (json) {
+    $.getJSON('http://davidsyntex.github.io/WebTrudvangSL/game/tc/json/trudvangThingEnglish.json', function (json) {
         thingList = json;
     });
 
     ResetNamePeopleResults();
     ResetNameThingsResults();
-    ResetKroppspoangResults();
 
     var generatedNames = [];
     var namesToGenerate = 5;
@@ -51,74 +50,6 @@ $(document).ready(function () {
     $("#nameGender").find("input:radio").change(function () {
         ResetNamePeopleResults();
     });
-
-    $("#kroppspoangTotala").change(function () {
-        displayKroppspoang();
-    });
-
-    $("#kroppspoangRakna").click(function () {
-        displayKroppspoang();
-    });
-
-    $("#fardigheterRakna").click(function () {
-        displayFardigheter();
-    });
-
-    $("#fardigheterGammaltFV").change(function () {
-        var fardigheterNyttFV = $("#fardigheterNyttFV");
-        var fardigheterGammaltFV = $("#fardigheterGammaltFV");
-
-        if (fardigheterGammaltFV.val() >= fardigheterNyttFV.val()) {
-            fardigheterNyttFV.val(+fardigheterGammaltFV.val() + 1);
-        }
-        displayFardigheter();
-    });
-    $("#fardigheterNyttFV").change(function () {
-        var fardigheterNyttFV = $("#fardigheterNyttFV");
-        var fardigheterGammaltFV = $("#fardigheterGammaltFV");
-
-        if (fardigheterNyttFV.val() <= fardigheterGammaltFV.val()) {
-            fardigheterGammaltFV.val(+fardigheterNyttFV.val() - 1);
-        }
-        displayFardigheter();
-    });
-    $("#fardigheterMod").change(function () {
-        displayFardigheter();
-    });
-
-    function displayFardigheter() {
-        var apKostnad = 0;
-        var gammaltFV = $("#fardigheterGammaltFV").val();
-        var nyttFV = $("#fardigheterNyttFV").val();
-        var mod = $("#fardigheterMod").val();
-
-        for (var i = +gammaltFV + 1; i <= nyttFV; i++) {
-            if (+i + +mod < 1) {
-                apKostnad = +apKostnad + 1;
-            } else {
-                apKostnad = +apKostnad + +i + +mod;
-            }
-        }
-        generatedNames.push(apKostnad + " ÄP");
-        $("#fardigheterResults").html(generateHtmlOutput());
-        clearGeneratedNames();
-    }
-
-    function displayKroppspoang() {
-        var totalaKroppspoang = $("#kroppspoangTotala").val();
-        var kroppspoangA = Math.ceil(totalaKroppspoang / 2);
-        var kroppspoangB = totalaKroppspoang;
-        var kroppspoangC = Math.round(totalaKroppspoang / 1.5);
-        generatedNames.push("Huvud: " + kroppspoangA);
-        generatedNames.push("Högerarm: " + kroppspoangA);
-        generatedNames.push("Vänsterarm: " + kroppspoangA);
-        generatedNames.push("Bröstkorg: " + kroppspoangB);
-        generatedNames.push("Mage: " + kroppspoangC);
-        generatedNames.push("Högerben: " + kroppspoangC);
-        generatedNames.push("Vänsterben: " + kroppspoangC);
-        $("#kroppspoangResults").html(generateHtmlOutput());
-        clearGeneratedNames();
-    }
 
     function clearGeneratedNames() {
         generatedNames = [];
@@ -170,10 +101,11 @@ $(document).ready(function () {
         var suffix = thingList[thing]["suffix"][suffixRandomNumber];
 
         while (suffix === prefix) {
+            console.log("Loopar");
             suffix = thingList[thing]["suffix"][getRandomNumber(thingList[thing]["suffix"].length) - 1];
         }
 
-        return prefix + suffix;
+        return prefix + " " + suffix;
     }
 
     function getRandomPeoplePrefix(people) {
@@ -201,9 +133,5 @@ $(document).ready(function () {
 
     function ResetNameThingsResults() {
         $("#nameThingsResults").html('<br><ul class="list-group"><li class="list-group-item">Tryck på en knapp för att slumpa ett namn. Du kan behöva fixa till namnen i efterhand.</li></ul>');
-    }
-
-    function ResetKroppspoangResults() {
-        $("#kroppspoangResults").html('<br><ul class="list-group"><li class="list-group-item">Skriv in totala kroppspoäng och tryck på Räkna ut.</li></ul>');
     }
 });
