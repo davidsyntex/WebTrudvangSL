@@ -5,7 +5,8 @@
     "navbarGeneralHooks": "Äventyrsuppslag",
     "navbarGeneralTraits": "Kännetecken",
     "navbarGeneralIntrigue": "Intriger",
-    "navbarGeneralInitiative": "Initiativ"
+    "navbarGeneralInitiative": "Initiativ",
+    "buttonInitiative": "Initiativ &raquo;"
   },
   "english": {
     "navbarGames": "Games<span class=\"caret\"></span>",
@@ -13,6 +14,7 @@
     "navbarGeneralHooks": "Hooks",
     "navbarGeneralTraits": "Traits",
     "navbarGeneralIntrigue": "Intrigue",
-    "navbarGeneralInitiative": "Initiativ"
+    "navbarGeneralInitiative": "Initiative",
+    "buttonInitiative": "Initiative &raquo;"
   }
 }
